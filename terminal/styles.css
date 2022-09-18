@@ -15,6 +15,14 @@ body {
     padding-bottom: 10px;
 }
 
+.terminal-text-link {
+    color: #C7C7C7;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    display: flex;
+}
+
 .terminal-text-highlighted {
     color: #60FA68;
     padding-top: 10px;
