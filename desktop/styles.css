@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    background-image: url(/desktop/assets/wallpapers/wallpaper-1.jpg);
+    background-image: url(/desktop/assets/backgrounds/Background_1.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -18,7 +18,8 @@ body {
 }
 
 .window {
-    background-color: #fff;
+    background-color: #38383b;
+    color: white;
     justify-content: space-between;
     display: flex;
     padding: 10px;
@@ -30,8 +31,7 @@ body {
     position: fixed;
     bottom: 20px;
     width: 60%;
-    background-color: #fff;
-    border-top: 1px solid #ccc;
+    background-color: #38383b;
     padding: 10px;
     z-index: 1;
     left: 20%;
@@ -47,8 +47,8 @@ body {
     padding: 10px;
     margin: 10px;
     border-radius: 20px;
-    background-color: #fff;
-    color: #000;
+    background-color: #38383b;
+    color: white;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
