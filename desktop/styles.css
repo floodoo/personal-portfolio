@@ -1,0 +1,56 @@
+html {
+    overflow: scroll;
+    font-family: monospace;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-image: url(/desktop/assets/wallpapers/wallpaper-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    margin: 0;
+}
+
+.window {
+    background-color: #fff;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.bottom-nav-bar {
+    position: fixed;
+    bottom: 20px;
+    width: 60%;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+    left: 20%;
+    right: 20%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-nav-bar a {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}

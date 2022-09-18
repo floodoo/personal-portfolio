@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <title>Florian Schmitz</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div class="terminal-window">
+      <div
+        class="terminal-window-button"
+        style="background-color: #ff5f57"
+      ></div>
+      <div
+        class="terminal-window-button"
+        style="background-color: #febc30"
+      ></div>
+      <div
+        class="terminal-window-button"
+        style="background-color: #2bc840"
+      ></div>
+      <div class="terminal-window-name">florianschmitz@MacBook-Pro:~</div>
+    </div>
+    <nav>
+      <a class="nav-button" data-hotkey="Meta+1" href="index.html">
+        <ul>
+          <li class="nav-button-text">~</li>
+          <li>⌘1</li>
+        </ul>
+      </a>
+      <a class="nav-button" data-hotkey="Meta+2" href="about.html">
+        <ul>
+          <li class="nav-button-text">About</li>
+          <li>⌘2</li>
+        </ul>
+      </a>
+      <a class="nav-button" data-hotkey="Meta+3" href="projects.html">
+        <ul>
+          <li class="nav-button-text">Projects</li>
+          <li>⌘3</li>
+        </ul>
+      </a>
+      <a class="nav-button" data-hotkey="Meta+4" href="blog.html">
+        <ul>
+          <li class="nav-button-text">Blog</li>
+          <li>⌘4</li>
+        </ul>
+      </a>
+      <a class="nav-button" data-hotkey="Meta+5" href="contact.html">
+        <ul>
+          <li class="nav-button-text">Contact</li>
+          <li>⌘5</li>
+        </ul>
+      </a>
+    </nav>
+    <script>
+      document.addEventListener("keydown", (keyboardEvent) => {
+        [...document.querySelectorAll(`[data-hotkey]`)].forEach((elem) => {
+          const combineKey = elem.dataset.hotkey.split("+");
+
+          for (let myKeyStr of combineKey) {
+            myKeyStr = myKeyStr.toUpperCase();
+
+            if (myKeyStr.length > 1) {
+              if (
+                (myKeyStr === "META" && keyboardEvent.metaKey) ||
+                keyboardEvent.ctrlKey
+              ) {
+                continue;
+              }
+            }
+            if (keyboardEvent.key.toUpperCase() !== myKeyStr) {
+              return;
+            }
+          }
+          keyboardEvent.preventDefault();
+          elem.click();
+        });
+      });
+    </script>
+    <!-- End of Navbar -->
+    <div style="padding-left: 15px">
+      <div class="terminal-text" id="last-login"></div>
+      <script>
+        document.getElementById(
+          "last-login"
+        ).innerHTML = `Last login: ${new Date().toLocaleString()} on ttys000`;
+      </script>
+
+      <img
+        src="assets/images/terminal-symbol.svg"
+        alt="terminal new line symbol"
+        style="padding-right: 4px"
+      />
+      <span class="terminal-text-highlighted">~ </span>
+      <span id="typewriter"></span>
+      <span id="typewriter-text" style="display: none">
+        <span class="terminal-text-highlighted">cd </span>
+        <span class="terminal-text">development/portfolio</span>
+      </span>
+      <script type="text/javascript">
+        const typewriter = new Typewriter(
+          document.getElementById("typewriter"),
+          {
+            loop: false,
+            delay: 100,
+          }
+        );
+
+        var currentUrl = window.location.href.split("/");
+        var currentPage = currentUrl[currentUrl.length - 1];
+
+        typewriter
+          .typeString('<span class="terminal-text-highlighted">cd </span>')
+          .typeString(
+            '<span class="terminal-text">development/portfolio</span>'
+          )
+          .start();
+
+        setTimeout(function () {
+          document.getElementById("line-1").style.display = "block";
+          document.getElementById("typewriter").style = "display: none";
+          document.getElementById("typewriter-text").style = "display: inline";
+
+          const typewriter2 = new Typewriter(
+            document.getElementById("typewriter-2"),
+            {
+              loop: false,
+              delay: 100,
+            }
+          );
+
+          typewriter2
+            .typeString('<span class="terminal-text-highlighted">make </span>')
+            .typeString(`<span class="terminal-text">${currentPage}</span>`)
+            .start();
+        }, 4000);
+
+        setTimeout(function () {
+          document.getElementById("line-2").style.display = "block";
+          document.getElementById("typewriter-2").style = "display: none";
+          document.getElementById("typewriter-text-2-2").innerHTML =
+            currentPage;
+          document.getElementById("typewriter-text-2").style =
+            "display: inline";
+          document.getElementById("input-0").focus();
+        }, 7000);
+      </script>
+
+      <div id="line-1" style="display: none">
+        <img
+          src="assets/images/terminal-symbol.svg"
+          alt="terminal new line symbol"
+          style="padding-right: 4px; padding-top: 15px"
+        />
+        <span class="terminal-text-highlighted">portfolio [</span>
+        <span style="color: #60fdff">main</span>
+        <span class="terminal-text-highlighted">]</span>
+        <span>⚡️</span>
+        <span id="typewriter-2"></span>
+        <span id="typewriter-text-2" style="display: none">
+          <span class="terminal-text-highlighted">make </span>
+          <span id="typewriter-text-2-2" class="terminal-text">portfolio</span>
+        </span>
+      </div>
+      <div id="line-2" style="display: none">
+        <div style="padding-top: 15px">
+          <span class="terminal-text-highlighted">portfolio </span>
+          <span>⚡️</span>
+          <span class="terminal-text">Command not found</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

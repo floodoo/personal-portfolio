@@ -1,0 +1,255 @@
+html {
+    overflow: scroll;
+    font-family: monospace;
+}
+
+body {
+    background-color: #000;
+    overflow: hidden;
+    margin: 0;
+}
+
+.terminal-text {
+    color: #C7C7C7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.terminal-text-highlighted {
+    color: #60FA68;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.terminal-window {
+    background-color: #383938;
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    padding-left: 5px;
+}
+
+.terminal-window-button {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    margin: 0 4px;
+}
+
+.terminal-window-close-button {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    margin: 0 4px;
+    background-color: #ff5f57;
+}
+
+.terminal-window-close-button:hover::after {
+    color: black;
+    content: "x";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    text-align: center;
+
+}
+
+.terminal-window-name {
+    color: #B4B5B4;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+}
+
+nav {
+    grid-gap: 1px;
+    padding-top: 30px;
+    background-color: #454545;
+    display: flex;
+}
+
+.nav-button {
+    background-color: #1C1C1C;
+    color: #B5B5B5;
+    padding: 10px;
+    font-size: 100%;
+    text-decoration: none;
+    flex: 1 1 auto;
+}
+
+.nav-button-active {
+    background-color: #383938;
+    color: #fff;
+    padding: 10px;
+    font-size: 100%;
+    text-decoration: none;
+    flex: 1 1 auto;
+}
+
+.nav-add-button {
+    background-color: #252425;
+    color: #B5B5B5;
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+.nav-menu-button {
+    background-color: #252425;
+    color: #B5B5B5;
+    font-size: 13px;
+    text-decoration: none;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.nav-menu-active {
+  position: fixed;
+  top: 70px;
+  right: 15px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 14px;
+  padding: 10px;
+  background-color: #232222;
+  border-radius: 5px;
+  border: 1px solid #474646;
+}
+
+.nav-menu-active a {
+  color: #B5B5B5;
+  text-decoration: none;
+}
+
+#menu-home, #menu-about, #menu-projects, #menu-blog, #menu-contact {
+  display: none;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.nav-button-text:after, #menu-home:after, #menu-about:after, #menu-projects:after, #menu-blog:after, #menu-contact:after {
+    content: " (-FloOS)";
+    align-items: center;
+    color: #b5b5b5;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Typewriter__cursor{
+    color: transparent;
+    background-color: #c7c7c7;
+    padding-right: 3px;;
+}
+
+p {
+     color: #C7C7C7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #C7C7C7;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    color: #C7C7C7;
+    font-family: monospace;
+    width: 80%;
+    font-size: 1em
+}
+
+input:focus { 
+    outline: none;
+}
+
+form {
+    display: inline;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+  #contact {
+    display: none;
+  }
+  #menu-contact {
+    display: block;
+  }
+  .nav-add-button {
+    display: none;
+  }
+  .nav-menu-button {
+    display: flex;
+  }
+} 
+
+@media screen and (max-width: 730px) {
+  #blog {
+    display: none;
+  }
+  #menu-blog {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #projects {
+    display: none;
+  }
+  input {
+    width: auto;
+  }
+  #menu-projects {
+    display: block;
+  }
+} 
+
+@media screen and (max-width: 360px) {
+  #about {
+    display: none;
+  }
+  #menu-about {
+    display: block;
+  }
+  .terminal-window-name {
+    display: none;
+  }
+  input {
+    width: auto;
+  }
+} 

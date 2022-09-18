@@ -1,0 +1,121 @@
+html {
+    overflow: scroll;
+    font-family: monospace;
+    min-width:900px;
+    width: auto !important;
+    width:900px;
+}
+
+body {
+    background-color: #000;
+    overflow: hidden;
+    margin: 0;
+}
+
+.terminal-text {
+    color: #C7C7C7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.terminal-text-highlighted {
+    color: #60FA68;
+}
+
+.terminal-window {
+    background-color: #383938;
+    width: 100%;
+    min-width:900px;
+    height: 30px;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    padding-left: 5px;
+}
+
+.terminal-window-button {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    margin: 0 4px;
+}
+
+.terminal-window-name {
+    color: #B4B5B4;
+    padding-left: 40%;
+}
+
+nav {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    padding-top: 30px;
+    background-color: #454545;
+}
+
+.nav-button {
+    background-color: #1C1C1C;
+    color: #B5B5B5;
+    padding: 10px;
+    font-size: 100%;
+    text-decoration: none;
+}
+
+.nav-button-active {
+    background-color: #383938;
+    color: #fff;
+    padding: 10px;
+    font-size: 100%;
+    text-decoration: none;
+}
+
+.nav-button-text:after {
+    content: " (-FloOS)";
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Typewriter__cursor{
+    color: transparent;
+    background-color: #c7c7c7;
+    padding-right: 3px;;
+}
+
+p {
+     color: #C7C7C7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #C7C7C7;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    color: #C7C7C7;
+    font-family: monospace;
+    width: 80%;
+}
+
+input:focus { 
+    outline: none;
+}
+
+form {
+    display: inline;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
