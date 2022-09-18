@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts/loadAssets.js"></script>
     <script type="text/javascript">
       sessionStorage.setItem("counter", 0);
     </script>
@@ -150,12 +152,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
     </div>
     <!-- End of navbar -->
     <div style="padding-left: 15px">
-      <div class="terminal-text" id="last-login"></div>
-      <script>
-        document.getElementById(
-          "last-login"
-        ).innerHTML = `Last login: ${new Date().toLocaleString()} on ttys000`;
-      </script>
+      <div data-include="shared/last-login"></div>
       <img
         src="assets/images/terminal-symbol.svg"
         alt="terminal new line symbol"
