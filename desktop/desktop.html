@@ -9,7 +9,27 @@
   <body>
     <div class="window">
       <span>FloOS</span>
-      <span>Di. 26.Juli 00:53</span>
+      <span id="time"></span>
+      <script>
+        var days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        function updateTime() {
+          var day = new Date();
+          var dayName = days[day.getDay()];
+          document.getElementById("time").innerHTML =
+            dayName +
+            " " +
+            day.toLocaleString("en-US", {
+              hour12: true,
+              hour: "numeric",
+              minute: "numeric",
+              day: "numeric",
+              month: "numeric",
+            });
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+      </script>
     </div>
     <div class="bottom-nav-bar">
       <a>Overview</a>
