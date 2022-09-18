@@ -262,8 +262,9 @@
                   const help = document.createElement("div");
                   help.innerHTML = `<span class="terminal-text-highlighted">help</span> - shows this help message<br /><br />`;
 
-                  help.innerHTML += `<span class="terminal-text-highlighted">home</span> - shows home tab<br />`;
+                  help.innerHTML += `<span class="terminal-text-highlighted">home</span> - shows home tab<br /><br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">about</span> - shows information about me<br />`;
+                  help.innerHTML += `<span class="terminal-text-highlighted">--quickfacts</span> - shows quickfacts about me<br /><br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">projects</span> - shows my projects<br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">blog</span> - shows my blog<br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">contact</span> - shows my contact informations<br /><br />`;
@@ -303,27 +304,25 @@
                     }
                   }, 3000);
                 } else if (
-                  document.getElementById(`input-${counter}`).value === "whoami"
+                  document.getElementById(`input-${counter}`).value ===
+                  "about --quickfacts"
                 ) {
-                  const contact = document.createElement("div");
-                  contact.innerHTML = `3...2...1...`;
-                  contact.className = "terminal-text";
-                  document.getElementById("line-2").appendChild(contact);
-
-                  setTimeout(function () {
-                    window.location.href = "terminal/about.html";
-                  }, 3000);
+                  const quickfacts = document.createElement("div");
+                  quickfacts.innerHTML = `<div data-include="terminal/shared/quickfacts"></div>`;
+                  quickfacts.className = "terminal-text";
+                  document.getElementById("line-2").appendChild(quickfacts);
+                  loadHtmlFile("terminal/shared/quickfacts");
                 } else if (
                   document.getElementById(`input-${counter}`).value === "ls"
                 ) {
-                  const projects = document.createElement("table");
+                  const folder = document.createElement("table");
 
-                  projects.innerHTML = `<tr><td>home</td><td>about</td><td>projects</td></tr>`;
-                  projects.innerHTML += `<tr><td>blog</td><td>contact</td><td>resume</td></tr>`;
+                  folder.innerHTML = `<tr><td>home</td><td>about</td><td>projects</td></tr>`;
+                  folder.innerHTML += `<tr><td>blog</td><td>contact</td><td>resume</td></tr>`;
 
-                  projects.style.width = "100%";
-                  projects.style.color = "#60fdff";
-                  document.getElementById("line-2").appendChild(projects);
+                  folder.style.width = "100%";
+                  folder.style.color = "#60fdff";
+                  document.getElementById("line-2").appendChild(folder);
                 } else if (
                   document.getElementById(`input-${counter}`).value === "clear"
                 ) {

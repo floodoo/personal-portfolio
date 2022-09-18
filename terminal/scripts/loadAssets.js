@@ -1,5 +1,3 @@
-
-
 $(function () {
     var includes = $("[data-include]");
     $.each(includes, function () {
@@ -7,3 +5,13 @@ $(function () {
         $(this).load(file);
     });
 });
+
+function loadHtmlFile(fileName) {
+    var includes = $("[data-include]");
+    $.each(includes, function () {
+        if ($(this).data("include") == fileName) {
+            var file = $(this).data("include") + ".html";
+            $(this).load(file);
+        }
+    });
+}
