@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    background-image: url(/desktop/assets/backgrounds/Background_1.svg);
+    background-image: url(/desktop/assets/backgrounds/Background_1.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -53,4 +53,21 @@ body {
     font-weight: bold;
     text-align: center;
     text-decoration: none;
+}
+
+.file-image {
+    height: 100px;
+}
+
+.file{
+    padding: 30px;
+    color: white;
+    font-size: 15px;
+    width: fit-content;
+    text-align: center;
+}
+
+.file-link {
+    text-decoration: none;
+    color: white;
 }
