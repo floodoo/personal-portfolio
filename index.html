@@ -9,7 +9,10 @@
       sessionStorage.setItem("counter", 0);
     </script>
     <title>Portfolio of Florian Schmitz</title>
-    <meta name="description" content="This is my personal terminal style website, to show my projects and skills" />
+    <meta
+      name="description"
+      content="This is my personal terminal style website, to show my projects and skills"
+    />
   </head>
 
   <body>
@@ -295,7 +298,6 @@
                   about.innerHTML = `<span style="color:orange">Warning: </span>An instance of ${value} is already running. You will be redirected...`;
                   about.className = "terminal-text";
                   document.getElementById("line-2").appendChild(about);
-                  about.innerHTML += `<br /><span style="color:red">Error: </span>An error has occurred. You have to restart it with our <span class="terminal-text-highlighted">make</span> command.`;
 
                   setTimeout(function () {
                     if (value === "home") {
@@ -303,7 +305,7 @@
                     } else {
                       window.location.href = `terminal/${value}.html`;
                     }
-                  }, 5000);
+                  }, 3000);
                 } else if (
                   document.getElementById(`input-${counter}`).value === "whoami"
                 ) {

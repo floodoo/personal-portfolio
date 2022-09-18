@@ -249,7 +249,6 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   about.innerHTML = `<span style="color:orange">Warning: </span>An instance of ${value} is already running. You will be redirected...`;
                   about.className = "terminal-text";
                   document.getElementById("line-2").appendChild(about);
-                  about.innerHTML += `<br /><span style="color:red">Error: </span>An error has occurred. You have to restart it with our <span class="terminal-text-highlighted">make</span> command.`;
 
                   setTimeout(function () {
                     if (value === "home") {
@@ -257,7 +256,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                     } else {
                       window.location.href = `${value}.html`;
                     }
-                  }, 5000);
+                  }, 3000);
                 }  else if (
                   document.getElementById(`input-${counter}`).value === "whoami"
                 ) {
