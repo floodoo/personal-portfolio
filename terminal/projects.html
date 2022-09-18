@@ -195,6 +195,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
             var inputWithCounter = `input-${counter + 1}`;
             var deactivateInput = true;
             var workProjects = ["coodoo-halbzeit", "coodoo-familydo", "	ibtc-bibkat", "gilde-einkaufsapp", "blueplant"];
+            var personalProjects = ["SOL-Connect", "	Joy-it-Grab-it-robot02-frontend", "Joy-it-Grab-it-robot02-backend", "personal-portfolio", "gas3"];
 
             document
               .getElementById(`input-${counter}`)
@@ -275,17 +276,20 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                     github.innerHTML = `<span style="color:red">Error: </span>You have to specify a project.`;
                     github.className = "terminal-text";
                     document.getElementById("line-2").appendChild(github);
-                  } else if (projectString === "portfolio") {
-                    window.open(`https://github.com/floodoo/portfolio-terminal-style`, '_blank').focus();
-                    document.getElementById("line-2").appendChild(document.createElement("br"));
-                  } if (workProjects.includes(projectString.toLowerCase())) {
+                  } 
+                  if (workProjects.includes(projectString.toLowerCase())) {
                     const error = document.createElement("p");
                     error.innerHTML = `<span style="color:red">Error: </span>You don't have access to this project.`;
                     error.className = "terminal-text";
                     document.getElementById("line-2").appendChild(error);
-                  } else {
+                  } else if (personalProjects.includes(projectString.toLowerCase())){
                     window.open(`https://github.com/floodoo/${projectString.toLowerCase()}`, '_blank').focus();
                     document.getElementById("line-2").appendChild(document.createElement("br"));
+                  } else {
+                    const error = document.createElement("p");
+                    error.innerHTML = `<span style="color:red">Error: </span>Project not found.`;
+                    error.className = "terminal-text";
+                    document.getElementById("line-2").appendChild(error);
                   }
 
                   
@@ -296,7 +300,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   projects.innerHTML = `<span class="terminal-text">Personal projects</span>`;
                   projects.innerHTML += `<br>`;
                   projects.innerHTML += `<tr><td>SOL-Connect</td><td>Joy-it-Grab-it-robot02-frontend</td><td>Joy-it-Grab-it-robot02-backend</td></tr>`;
-                  projects.innerHTML += `<tr><td>portfolio</td><td>gas3</td></tr>`;
+                  projects.innerHTML += `<tr><td>personal-portfolio</td><td>gas3</td></tr>`;
                   projects.innerHTML += `<br>`;
                   projects.innerHTML += `<span class="terminal-text">Work projects</span>`;
                   projects.innerHTML += `<br>`;

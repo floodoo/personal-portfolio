@@ -295,13 +295,10 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   var socialString = document.getElementById(`input-${counter}`).value.split(" ")[1];
 
                   
-                  if (socialString === undefined) {
+                  if (socialString !== undefined) {
                     socialString = socialString.toLowerCase();
-                    const social = document.createElement("p");
-                    social.innerHTML = `<span style="color:red">Error: </span>You have to specify a social account.`;
-                    social.className = "terminal-text";
-                    document.getElementById("line-2").appendChild(social);
-                  } else if (socialString === "email" || socialString === "e-mail" || socialString === "mail") {
+                  } 
+                  if (socialString === "email" || socialString === "e-mail" || socialString === "mail") {
                     window.open(`mailto:contact@flo-dev.me`, '_blank').focus();
                     document.getElementById("line-2").appendChild(document.createElement("br"));
                   } else if (socialString === "linkedin") {
@@ -322,7 +319,17 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   }  else if (socialString === "tiktok") {
                     window.open(`https://www.tiktok.com/@_florianschmitz`, '_blank').focus();
                     document.getElementById("line-2").appendChild(document.createElement("br"));
-                  } 
+                  }  else if (socialString === undefined) {
+                     const social = document.createElement("p");
+                    social.innerHTML = `<span style="color:red">Error: </span>You have to specify a social account.`;
+                    social.className = "terminal-text";
+                    document.getElementById("line-2").appendChild(social);
+                  } else {
+                    const social = document.createElement("p");
+                    social.innerHTML = `<span style="color:red">Error: </span>Unknown social account.`;
+                    social.className = "terminal-text";
+                    document.getElementById("line-2").appendChild(social);
+                  }
 
                   
                 } else if (
