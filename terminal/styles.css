@@ -20,7 +20,8 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     text-decoration: none;
-    display: flex;
+    display:flex;
+    width: fit-content;
 }
 
 .terminal-text-highlighted {

@@ -196,6 +196,8 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
       <br>
       <a class="terminal-text-link" href="https://github.com/floodoo" target="_blank">GitHub: floodoo</a>
       <br>
+      <a class="terminal-text-link" href="https://florian-schmitz.medium.com" target="_blank">Medium: florian-schmitz</a>
+      <br>
       <a class="terminal-text-link" href="https://twitter.com/_florianschmitz" target="_blank">Twitter: _florianschmitz</a>
       <br>
       <a class="terminal-text-link" href="https://www.instagram.com/_florianschmitz/" target="_blank">Instagram: _florianschmitz</a>
@@ -240,8 +242,10 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   help.innerHTML += `<span class="terminal-text-highlighted">about</span> - shows information about me<br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">--quick-facts</span> - shows quick facts about me<br /><br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">projects</span> - shows my projects<br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">blog</span> - shows my blog<br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">contact</span> - shows my contact informations<br /><br />`;
+                  help.innerHTML += `<span class="terminal-text-highlighted">blog</span> - shows my blog<br /><br />`;
+                  
+                  help.innerHTML += `<span class="terminal-text-highlighted">contact</span> - shows my contact informations<br />`;
+                  help.innerHTML += `<span class="terminal-text-highlighted">open &lt;command&gt; <project></span> - opens social account on a new tab<br /><br />`;
 
                   help.innerHTML += `<span class="terminal-text-highlighted">ls</span> - lists all files and folders current directory<br /><br />`;
 
@@ -284,6 +288,43 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   quickFacts.className = "terminal-text";
                   document.getElementById("line-2").appendChild(quickFacts);
                   loadHtmlFile("shared/quick-facts");
+                } else if (
+                  document.getElementById(`input-${counter}`).value.split(" ")[0] ===
+                  "open"
+                ) {
+                  var socialString = document.getElementById(`input-${counter}`).value.split(" ")[1];
+
+                  
+                  if (socialString === undefined) {
+                    socialString = socialString.toLowerCase();
+                    const social = document.createElement("p");
+                    social.innerHTML = `<span style="color:red">Error: </span>You have to specify a social account.`;
+                    social.className = "terminal-text";
+                    document.getElementById("line-2").appendChild(social);
+                  } else if (socialString === "email" || socialString === "e-mail" || socialString === "mail") {
+                    window.open(`mailto:contact@flo-dev.me`, '_blank').focus();
+                    document.getElementById("line-2").appendChild(document.createElement("br"));
+                  } else if (socialString === "linkedin") {
+                    window.open(`https://www.linkedin.com/in/florian-schmitz-de/`, '_blank').focus();
+                    document.getElementById("line-2").appendChild(document.createElement("br"));
+                  } else if (socialString === "github") {
+                    window.open(`https://github.com/floodoo`, '_blank').focus();
+                    document.getElementById("line-2").appendChild(document.createElement("br"));
+                  } else if (socialString === "medium") {
+                    window.open(`https://florian-schmitz.medium.com`, '_blank').focus();
+                    document.getElementById("line-2").appendChild(document.createElement("br"));
+                  } else if (socialString === "twitter") {
+                    window.open(`https://twitter.com/_florianschmitz`, '_blank').focus();
+                    document.getElementById("line-2").appendChild(document.createElement("br"));
+                  } else if (socialString === "instagram" || socialString === "insta") {
+                    window.open(`https://www.instagram.com/_florianschmitz/`, '_blank').focus();
+                    document.getElementById("line-2").appendChild(document.createElement("br"));
+                  }  else if (socialString === "tiktok") {
+                    window.open(`https://www.tiktok.com/@_florianschmitz`, '_blank').focus();
+                    document.getElementById("line-2").appendChild(document.createElement("br"));
+                  } 
+
+                  
                 } else if (
                   document.getElementById(`input-${counter}`).value === "ls"
                 ) {

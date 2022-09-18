@@ -184,7 +184,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
           class="input-0"
           id="input-0"
           autocomplete="off"
-          placeholder="help"
+          placeholder="ls"
           autofocus
           />
         </div>
@@ -194,7 +194,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
             counter = parseInt(counter);
             var inputWithCounter = `input-${counter + 1}`;
             var deactivateInput = true;
-            var workProjects = ["coodoo-halbzeit", "coodoo-familydo", "	ibtc-bibkat", "gilde-einkaufsapp"];
+            var workProjects = ["coodoo-halbzeit", "coodoo-familydo", "	ibtc-bibkat", "gilde-einkaufsapp", "blueplant"];
 
             document
               .getElementById(`input-${counter}`)
@@ -269,8 +269,6 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                 ) {
                   var projectString = document.getElementById(`input-${counter}`).value.split(" ")[1];
 
-                  console.log(projectString);
-                  console.log(workProjects.includes(projectString));
                   
                   if (projectString === undefined) {
                     const github = document.createElement("p");
@@ -303,7 +301,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   projects.innerHTML += `<span class="terminal-text">Work projects</span>`;
                   projects.innerHTML += `<br>`;
                   projects.innerHTML += `<tr><td>coodoo-Halbzeit</td><td>coodoo-FamilyDo</td><td>IBTC-Bibkat</td></tr>`;
-                  projects.innerHTML += `<tr><td>Gilde-Einkaufsapp</td></tr>`;
+                  projects.innerHTML += `<tr><td>Gilde-Einkaufsapp</td><td>Blueplant</td></tr>`;
 
                   projects.style.width = "100%";
                   projects.style.color = "#60fdff";
