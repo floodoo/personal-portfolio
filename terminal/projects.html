@@ -215,12 +215,11 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
 
                   help.innerHTML += `<span class="terminal-text-highlighted">home</span> - shows home tab<br /><br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">about</span> - shows information about me<br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">--quickfacts</span> - shows quickfacts about me<br /><br />`;
+                  help.innerHTML += `<span class="terminal-text-highlighted">--quick-facts</span> - shows quick facts about me<br /><br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">projects</span> - shows my projects<br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">blog</span> - shows my blog<br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">contact</span> - shows my contact informations<br /><br />`;
 
-                  help.innerHTML += `<span class="terminal-text-highlighted">whoami</span> - Figure it out😉<br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">github &lt;command&gt; <project></span> - opens github repository<br /><br />`;
 
                   help.innerHTML += `<span class="terminal-text-highlighted">ls</span> - lists all files and folders current directory<br /><br />`;
@@ -256,16 +255,14 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                     }
                   }, 3000);
                 }  else if (
-                  document.getElementById(`input-${counter}`).value === "whoami"
+                  document.getElementById(`input-${counter}`).value ===
+                  "about --quick-facts"
                 ) {
-                  const contact = document.createElement("div");
-                  contact.innerHTML = `3...2...1...`;
-                  contact.className = "terminal-text";
-                  document.getElementById("line-2").appendChild(contact);
-
-                  setTimeout(function () {
-                    window.location.href = "about.html";
-                  }, 3000);
+                  const quickFacts = document.createElement("div");
+                  quickFacts.innerHTML = `<div data-include="shared/quick-facts"></div>`;
+                  quickFacts.className = "terminal-text";
+                  document.getElementById("line-2").appendChild(quickFacts);
+                  loadHtmlFile("shared/quick-facts");
                 } else if (
                   document.getElementById(`input-${counter}`).value.split(" ")[0] ===
                   "github"
