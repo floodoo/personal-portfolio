@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="terminal/styles.css" />
+    <link rel="stylesheet" href="terminal/styles/styles.css" />
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="terminal/scripts/loadAssets.js"></script>
+    <script src="shared/scripts/loadAssets.js"></script>
     <script type="text/javascript">
       sessionStorage.setItem("counter", 0);
     </script>
@@ -20,10 +20,13 @@
   <body>
     <!-- Navbar -->
     <div class="terminal-window">
-      <a class="terminal-window-close-button" href="desktop/desktop.html"></a>
+      <a
+        class="terminal-window-close-button"
+        href="desktop/pages/desktop.html"
+      ></a>
       <a
         class="terminal-window-minimize-button"
-        href="desktop/desktop.html"
+        href="desktop/pages/desktop.html"
         style="background-color: #febc30"
       ></a>
       <div
@@ -48,7 +51,7 @@
         id="about"
         class="nav-button"
         data-hotkey="Meta+2"
-        href="terminal/about.html"
+        href="terminal/pages/about.html"
       >
         <ul>
           <li class="nav-button-text">About</li>
@@ -59,7 +62,7 @@
         id="projects"
         class="nav-button"
         data-hotkey="Meta+3"
-        href="terminal/projects.html"
+        href="terminal/pages/projects.html"
       >
         <ul>
           <li class="nav-button-text">Projects</li>
@@ -70,7 +73,7 @@
         id="blog"
         class="nav-button"
         data-hotkey="Meta+4"
-        href="terminal/blog.html"
+        href="terminal/pages/blog.html"
       >
         <ul>
           <li class="nav-button-text">Blog</li>
@@ -81,7 +84,7 @@
         id="contact"
         class="nav-button"
         data-hotkey="Meta+5"
-        href="terminal/contact.html"
+        href="terminal/pages/contact.html"
       >
         <ul>
           <li class="nav-button-text">Contact</li>
@@ -149,14 +152,14 @@
     </script>
     <div class="nav-menu" id="nav-menu">
       <a href="index.html" id="menu-home">Home</a>
-      <a href="terminal/about.html" id="menu-about">About</a>
-      <a href="terminal/projects.html" id="menu-projects">Projects</a>
-      <a href="terminal/blog.html" id="menu-blog">Blog</a>
-      <a href="terminal/contact.html" id="menu-contact">Contact</a>
+      <a href="terminal/pages/about.html" id="menu-about">About</a>
+      <a href="terminal/pages/projects.html" id="menu-projects">Projects</a>
+      <a href="terminal/pages/blog.html" id="menu-blog">Blog</a>
+      <a href="terminal/pages/contact.html" id="menu-contact">Contact</a>
     </div>
     <!-- End of navbar -->
     <div style="padding-left: 15px">
-      <div data-include="terminal/shared/last-login"></div>
+      <div data-include="terminal/shared/elements/last-login.html"></div>
       <img
         src="terminal/assets/images/terminal-symbol.svg"
         alt="terminal new line symbol"
@@ -299,7 +302,7 @@
                     if (value === "home") {
                       window.location.href = `index.html`;
                     } else {
-                      window.location.href = `terminal/${value}.html`;
+                      window.location.href = `terminal/pages/${value}.html`;
                     }
                   }, 3000);
                 } else if (
@@ -307,10 +310,10 @@
                   "about --quick-facts"
                 ) {
                   const quickFacts = document.createElement("div");
-                  quickFacts.innerHTML = `<div data-include="terminal/shared/quick-facts"></div>`;
+                  quickFacts.innerHTML = `<div data-include="terminal/shared/elements/quick-facts.html"></div>`;
                   quickFacts.className = "terminal-text";
                   document.getElementById("line-2").appendChild(quickFacts);
-                  loadHtmlFile("terminal/shared/quick-facts");
+                  loadHtmlFile("terminal/shared/elements/quick-facts.html");
                 } else if (
                   document.getElementById(`input-${counter}`).value === "ls"
                 ) {
@@ -340,7 +343,7 @@
                 } else if (
                   document.getElementById(`input-${counter}`).value === "exit"
                 ) {
-                  window.location.href = "/desktop/desktop.html";
+                  window.location.href = "/desktop/pages/desktop.html";
                   return;
                 } else {
                   const notFound = document.createElement("div");

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="scripts/loadAssets.js"></script>
+    <script src="../../shared/scripts/loadAssets.js"></script>
     <script type="text/javascript">
       sessionStorage.setItem("counter", 0);
     </script>
@@ -18,11 +18,11 @@
     <div class="terminal-window">
       <a
         class="terminal-window-close-button"
-        href="../desktop/desktop.html"
+        href="../../desktop/pages/desktop.html"
       ></a>
       <a
         class="terminal-window-minimize-button"
-        href="../desktop/desktop.html"
+        href="../../desktop/pages/desktop.html"
         style="background-color: #febc30"
       ></a>
       <div
@@ -36,7 +36,7 @@
         id="home"
         class="nav-button"
         data-hotkey="Meta+1"
-        href="../index.html"
+        href="../../index.html"
       >
         <ul>
           <li class="nav-button-text">~</li>
@@ -145,7 +145,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
       });
     </script>
    <div class="nav-menu" id="nav-menu">
-      <a href="../index.html" id="menu-home">Home</a>
+      <a href="../../index.html" id="menu-home">Home</a>
       <a href="about.html" id="menu-about">About</a>
       <a href="projects.html" id="menu-projects">Projects</a>
       <a href="blog.html" id="menu-blog">Blog</a>
@@ -153,9 +153,9 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
     </div>
     <!-- End of navbar -->
     <div style="padding-left: 15px">
-      <div data-include="shared/last-login"></div>
+      <div data-include="../shared/elements/last-login.html"></div>
       <img
-        src="assets/images/terminal-symbol.svg"
+        src="../assets/images/terminal-symbol.svg"
         alt="terminal new line symbol"
         style="padding-right: 4px"
       />
@@ -164,7 +164,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
       <span class="terminal-text">development/portfolio</span>
       <div></div>
       <img
-        src="assets/images/terminal-symbol.svg"
+        src="../assets/images/terminal-symbol.svg"
         alt="terminal new line symbol"
         style="padding-right: 4px; padding-top: 15px"
       />
@@ -251,7 +251,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
 
                   setTimeout(function () {
                     if (value === "home") {
-                      window.location.href = `../index.html`;
+                      window.location.href = `../../index.html`;
                     } else {
                       window.location.href = `${value}.html`;
                     }
@@ -261,10 +261,10 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   "about --quick-facts"
                 ) {
                   const quickFacts = document.createElement("div");
-                  quickFacts.innerHTML = `<div data-include="shared/quick-facts"></div>`;
+                  quickFacts.innerHTML = `<div data-include="../shared/elements/quick-facts.html"></div>`;
                   quickFacts.className = "terminal-text";
                   document.getElementById("line-2").appendChild(quickFacts);
-                  loadHtmlFile("shared/quick-facts");
+                  loadHtmlFile("../shared/elements/quick-facts.html");
                 } else if (
                   document.getElementById(`input-${counter}`).value.split(" ")[0] ===
                   "github"
@@ -331,7 +331,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                 else if (
                   document.getElementById(`input-${counter}`).value === "exit"
                 ) {
-                  window.location.href = "/desktop/desktop.html";
+                  window.location.href = "../../desktop/pages/desktop.html";
                   return;
                 } else {
                   const notFound = document.createElement("div");
