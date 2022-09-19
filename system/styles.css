@@ -1,0 +1,13 @@
+body {
+    background-color: #1070aa;
+    color: white;
+}
+
+.center {
+    text-align: center;
+}
+
+.center > ol {
+  display: inline-block;
+  text-align: left;
+}
