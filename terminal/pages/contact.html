@@ -205,6 +205,8 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
       <a class="terminal-text-link" href="https://www.instagram.com/_florianschmitz/" target="_blank">Instagram: _florianschmitz</a>
       <br>
       <a class="terminal-text-link" href="https://www.tiktok.com/@_florianschmitz" target="_blank">TikTok: _florianschmitz</a>
+      <br>
+      <a class="terminal-text-link" href="https://www.youtube.com/channel/UCFfKK-2ETMlfBVGVBP9sedA" target="_blank">YouTube: Florian Schmitz</a>
       </div>
       <br>
       <span class="terminal-text-highlighted">portfolio </span>
@@ -320,6 +322,9 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                     document.getElementById("line-2").appendChild(document.createElement("br"));
                   }  else if (socialString === "tiktok") {
                     window.open(`https://www.tiktok.com/@_florianschmitz`, '_blank').focus();
+                    document.getElementById("line-2").appendChild(document.createElement("br"));
+                  }  else if (socialString === "youtube") {
+                    window.open(`https://www.youtube.com/channel/UCFfKK-2ETMlfBVGVBP9sedA`, '_blank').focus();
                     document.getElementById("line-2").appendChild(document.createElement("br"));
                   }  else if (socialString === undefined) {
                      const social = document.createElement("p");
