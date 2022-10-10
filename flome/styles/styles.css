@@ -112,6 +112,7 @@ nav {
 
 h1 {
     font-size: 60px;
+    text-align: center;
 }
 
 .search-bar {
@@ -135,7 +136,6 @@ a {
 
 .website-shortcuts {
     margin-top: 25px;
-    width: fit-content;
     display: flex;
 }
 
@@ -146,7 +146,16 @@ a {
     margin-right: 25px;
 }
 
+.shortcut:last-child {
+    margin-right: 0px;
+}
+
+.shortcut div {
+    color: white;
+    text-align: center;
+}
+
 .shortcut img {
     padding-bottom: 10px;
-    width: 40px;
+    height: 40px;
 }
