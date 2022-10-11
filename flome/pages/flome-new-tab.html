@@ -30,7 +30,24 @@
     </div>
     <div class="center">
       <h1>Floogle</h1>
-      <input class="search-bar" type="text" placeholder="Search Floogle" />
+      <input
+        class="search-bar"
+        type="text"
+        placeholder="Search Floogle"
+        onkeydown="search(this)"
+      />
+      <script>
+        function search(ele) {
+          if (event.key === "Enter") {
+            window.open(
+              "https://www.google.de/search?q=" +
+                ele.value.split(" ").join("+"),
+              "_blank"
+            );
+            ele.value = "";
+          }
+        }
+      </script>
       <div class="website-shortcuts">
         <!-- Github shortcut -->
         <div class="shortcut">
