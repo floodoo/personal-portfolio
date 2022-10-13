@@ -75,19 +75,44 @@ body {
 }
 
 nav {
-    padding-left: 15px;
     display: flex;
+    padding-left: 15px;
 }
 
 .nav-button {
-    background-color: #a0144f;
+    background-color: #660e33;
     border-radius: 12px 12px 0px 0px;
-    margin: 0px 10px 0px 10px;
     display: flex;
     justify-content: space-between;
     padding-top: 14px;
     padding-bottom: 10px;
     user-select: none;
+}
+
+.nav-button-active {
+    background-color: #a0144f;
+    border-radius: 12px 12px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+.vertical-divider {
+    border-left: 2px solid #995d77;
+}
+
+.nav-add-button {
+    background-color: transparent;
+    color: #d9c2cc;
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
 }
 
 .nav-button-text {
