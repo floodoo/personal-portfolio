@@ -1,0 +1,13 @@
+html {
+    overflow: scroll;
+    font-family: monospace;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

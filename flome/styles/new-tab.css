@@ -1,0 +1,61 @@
+body {
+    background-color: #a0144f;
+    color: white;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+.search-bar {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    height: 40px;
+    padding-left: 15px;
+    font-size: 14px;
+}
+
+.search-bar:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.website-shortcuts {
+    margin-top: 25px;
+    display: flex;
+}
+
+.shortcut {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+.shortcut:last-child {
+    margin-right: 0px;
+}
+
+.shortcut div {
+    color: white;
+    text-align: center;
+}
+
+.shortcut img {
+    padding-bottom: 10px;
+    height: 40px;
+}

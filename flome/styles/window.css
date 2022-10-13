@@ -1,0 +1,59 @@
+.window {
+    background-color: #660e33;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    padding-left: 15px;
+}
+
+.window-button {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    margin: 0 4px;
+}
+
+.window-close-button {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    margin: 0 4px;
+    background-color: #ff5f57;
+}
+
+.window-close-button:hover::after {
+    color: black;
+    content: "x";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    text-align: center;
+
+}
+.window-minimize-button {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    margin: 0 4px;
+    background-color: #ff5f57;
+}
+
+.window-minimize-button:hover::after {
+    color: black;
+    content: "-";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    text-align: center;
+}
