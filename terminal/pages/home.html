@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact information of Florian Schmitz</title>
-    <meta name="description" content="Here are all social media accounts and contact possibilities of Florian Schmitz. You can write him an e-mail or an direct message over instagram. He tweets, makes TikToks and posts youtube videos."/>
+    <title>Developer Portfolio of Florian Schmitz</title>
+    <meta
+      name="description"
+      content="This is the developer portfolio of Florian Schmitz. It contains information about his projects, his skills and his contact information. You can also find links to his social media accounts. Florian Schmitz is a frontend developer with more than 3 years of experience.."
+    />
     <link rel="stylesheet" href="../styles/styles.css" />
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -17,10 +20,7 @@
   <body>
     <!-- Navbar -->
     <div class="terminal-window">
-      <a
-        class="terminal-window-close-button"
-        href="../../index.html"
-      ></a>
+      <a class="terminal-window-close-button" href="../../index.html"></a>
       <a
         class="terminal-window-minimize-button"
         href="../../index.html"
@@ -35,7 +35,7 @@
     <nav>
       <a
         id="home"
-        class="nav-button"
+        class="nav-button-active"
         data-hotkey="Meta+1"
         href="home.html"
       >
@@ -44,12 +44,7 @@
           <li>⌘1</li>
         </ul>
       </a>
-      <a
-        id="about"
-        class="nav-button"
-        data-hotkey="Meta+2"
-        href="about.html"
-      >
+      <a id="about" class="nav-button" data-hotkey="Meta+2" href="about.html">
         <ul>
           <li class="nav-button-text">About</li>
           <li>⌘2</li>
@@ -66,12 +61,7 @@
           <li>⌘3</li>
         </ul>
       </a>
-      <a
-        id="blog"
-        class="nav-button"
-        data-hotkey="Meta+4"
-        href="blog.html"
-      >
+      <a id="blog" class="nav-button" data-hotkey="Meta+4" href="blog.html">
         <ul>
           <li class="nav-button-text">Blog</li>
           <li>⌘4</li>
@@ -79,7 +69,7 @@
       </a>
       <a
         id="contact"
-        class="nav-button-active"
+        class="nav-button"
         data-hotkey="Meta+5"
         href="contact.html"
       >
@@ -89,7 +79,9 @@
         </ul>
       </a>
       <span class="nav-add-button">+</span>
-      <a class="nav-menu-button" href="javascript:void(0);" onclick="openMenu()">&gt;&gt;</a>
+      <a class="nav-menu-button" href="javascript:void(0);" onclick="openMenu()"
+        >&gt;&gt;</a
+      >
     </nav>
     <script>
       function openMenu() {
@@ -101,24 +93,24 @@
         }
       }
 
-      window.addEventListener('mouseup', function(event){
-	      var nav = document.getElementById('nav-menu');
+      window.addEventListener("mouseup", function (event) {
+        var nav = document.getElementById("nav-menu");
 
-        if (nav && event.target != nav && event.target.parentNode != nav){
-              nav.className = "nav-menu";
-          }
-        });
+        if (nav && event.target != nav && event.target.parentNode != nav) {
+          nav.className = "nav-menu";
+        }
+      });
 
       function closeNavMenuOnScreenWidth(windowSize) {
         var navMenu = document.getElementById("nav-menu");
-  if (navMenu && !windowSize.matches) {
-    navMenu.className = "nav-menu";
-  }
-}
+        if (navMenu && !windowSize.matches) {
+          navMenu.className = "nav-menu";
+        }
+      }
 
-var windowSize = window.matchMedia("(max-width: 901px)")
-closeNavMenuOnScreenWidth(windowSize)
-windowSize.addListener(closeNavMenuOnScreenWidth)
+      var windowSize = window.matchMedia("(max-width: 901px)");
+      closeNavMenuOnScreenWidth(windowSize);
+      windowSize.addListener(closeNavMenuOnScreenWidth);
     </script>
     <script>
       document.addEventListener("keydown", (keyboardEvent) => {
@@ -145,71 +137,90 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
         });
       });
     </script>
-   <div class="nav-menu" id="nav-menu">
+    <div class="nav-menu" id="nav-menu">
       <a href="home.html" id="menu-home">Home</a>
       <a href="about.html" id="menu-about">About</a>
       <a href="projects.html" id="menu-projects">Projects</a>
       <a href="blog.html" id="menu-blog">Blog</a>
       <a href="contact.html" id="menu-contact">Contact</a>
     </div>
-       <!-- End of navbar -->
-  <div style="padding-left: 15px">
-    <div data-include="../shared/elements/last-login.html"></div>
-    <img src="../assets/images/terminal-symbol.svg" alt="terminal new line symbol" style="padding-right: 4px" />
-    <span class="terminal-text-highlighted">~ </span>
-    <span class="terminal-text-highlighted">cd </span>
-    <span class="terminal-text">development/portfolio</span>
-    <div style="padding-top: 5px"></div>
-    <img src="../assets/images/terminal-symbol.svg" alt="terminal new line symbol" style="padding-right: 4px" />
-    <span class="terminal-text-highlighted">portfolio [</span>
-    <span style="color: #60fdff">main</span>
-    <span class="terminal-text-highlighted">]</span>
-    <span>⚡️</span>
-    <span class="terminal-text-highlighted">make </span>
-    <span class="terminal-text">portfolio</span>
-    <span id="onRemove"></span>
-    <div id="line-1" style="padding-top: 6px">
-    <span class="terminal-text-highlighted">portfolio</span>
-    <span>⚡️</span>
-    <span id="typewriter"></span>
-    <span id="typewriter-text" class="terminal-text-highlighted" style="display: none;">contact</span>
-    <script type="text/javascript">
-      const typewriter = new Typewriter("#typewriter", {
-        loop: false,
-        delay: 70,
-      });
+    <!-- End of navbar -->
+    <div style="padding-left: 15px">
+      <div data-include="../shared/elements/last-login.html"></div>
+      <img
+        src="../assets/images/terminal-symbol.svg"
+        alt="terminal new line symbol"
+        style="padding-right: 4px"
+      />
+      <span class="terminal-text-highlighted">~ </span>
+      <span id="typewriter"></span>
+      <span id="typewriter-text" style="display: none">
+        <span class="terminal-text-highlighted">cd </span>
+        <span class="terminal-text">development/portfolio</span>
+      </span>
+      <script type="text/javascript">
+        const typewriter = new Typewriter(
+          document.getElementById("typewriter"),
+          {
+            loop: false,
+            delay: 70,
+          }
+        );
 
-      typewriter
-        .typeString('<span class="terminal-text-highlighted">contact</span>')
-        .start();
+        typewriter
+          .typeString('<span class="terminal-text-highlighted">cd </span>')
+          .typeString(
+            '<span class="terminal-text">development/portfolio</span>'
+          )
+          .start();
 
-      setTimeout(function () {
-        document.getElementById("typewriter").style.display = "none";
-        document.getElementById("typewriter-text").style.display = "inline";
-        document.getElementById("line-2").style.display = "block";
-        document.getElementById("input-0").focus();
-      }, 2000);
-    </script>
-    <div id="line-2" class="terminal-text" style="display: none">
-      <div>
-      <a class="terminal-text-link" href="mailto:contact@flo-dev.me" target="_blank">E-Mail: contact@flo-dev.me</a>
-      <br>
-      <a class="terminal-text-link" href="https://www.linkedin.com/in/florian-schmitz-de/" target="_blank">LinkedIn: florian-schmitz-de</a>
-      <br>
-      <a class="terminal-text-link" href="https://github.com/floodoo" target="_blank">GitHub: floodoo</a>
-      <br>
-      <a class="terminal-text-link" href="https://florian-schmitz.medium.com" target="_blank">Medium: florian-schmitz</a>
-      <br>
-      <a class="terminal-text-link" href="https://twitter.com/_florianschmitz" target="_blank">Twitter: _florianschmitz</a>
-      <br>
-      <a class="terminal-text-link" href="https://www.instagram.com/_florianschmitz/" target="_blank">Instagram: _florianschmitz</a>
-      <br>
-      <a class="terminal-text-link" href="https://www.tiktok.com/@_florianschmitz" target="_blank">TikTok: _florianschmitz</a>
-      <br>
-      <a class="terminal-text-link" href="https://www.youtube.com/channel/UCFfKK-2ETMlfBVGVBP9sedA" target="_blank">YouTube: Florian Schmitz</a>
+        setTimeout(function () {
+          document.getElementById("line-1").style.display = "block";
+          document.getElementById("typewriter").style = "display: none";
+          document.getElementById("typewriter-text").style = "display: inline";
+
+          const typewriter2 = new Typewriter(
+            document.getElementById("typewriter-2"),
+            {
+              loop: false,
+              delay: 70,
+            }
+          );
+
+          typewriter2
+            .typeString('<span class="terminal-text-highlighted">make </span>')
+            .typeString('<span class="terminal-text">portfolio</span>')
+            .start();
+        }, 3000);
+
+        setTimeout(function () {
+          document.getElementById("line-2").style.display = "block";
+          document.getElementById("typewriter-2").style = "display: none";
+          document.getElementById("typewriter-text-2").style =
+            "display: inline";
+          document.getElementById("input-0").focus();
+        }, 5000);
+      </script>
+
+      <div id="line-1" style="display: none">
+        <img
+          src="../assets/images/terminal-symbol.svg"
+          alt="terminal new line symbol"
+          style="padding-right: 4px; padding-top: 15px"
+        />
+        <span class="terminal-text-highlighted">portfolio [</span>
+        <span style="color: #60fdff">main</span>
+        <span class="terminal-text-highlighted">]</span>
+        <span>⚡️</span>
+        <span id="typewriter-2"></span>
+        <span id="typewriter-text-2" style="display: none">
+          <span class="terminal-text-highlighted">make </span>
+          <span class="terminal-text">portfolio</span>
+        </span>
       </div>
-      <br>
-      <span class="terminal-text-highlighted">portfolio </span>
+      <div id="line-2" style="display: none">
+        <div style="padding-top: 6px">
+          <span class="terminal-text-highlighted">portfolio </span>
           <span>⚡️</span>
           <input
             class="input-0"
@@ -217,8 +228,8 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
             autocomplete="off"
             placeholder="help"
           />
-    </div>
-       <script>
+        </div>
+        <script>
           async function createElements() {
             var counter = sessionStorage.getItem("counter");
             counter = parseInt(counter);
@@ -232,7 +243,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   return;
                 }
 
-               if (document.getElementById(`input-${counter}`).value === "") {
+                if (document.getElementById(`input-${counter}`).value === "") {
                   document
                     .getElementById("line-2")
                     .appendChild(document.createElement("div"));
@@ -240,16 +251,14 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   document.getElementById(`input-${counter}`).value === "help"
                 ) {
                   const help = document.createElement("div");
-                   help.innerHTML = `<span class="terminal-text-highlighted">help</span> - shows this help message<br /><br />`;
+                  help.innerHTML = `<span class="terminal-text-highlighted">help</span> - shows this help message<br /><br />`;
 
                   help.innerHTML += `<span class="terminal-text-highlighted">home</span> - shows home tab<br /><br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">about</span> - shows information about me<br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">--quick-facts</span> - shows quick facts about me<br /><br />`;
                   help.innerHTML += `<span class="terminal-text-highlighted">projects</span> - shows my projects<br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">blog</span> - shows my blog<br /><br />`;
-                  
-                  help.innerHTML += `<span class="terminal-text-highlighted">contact</span> - shows my contact informations<br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">open &lt;social account&gt; <project></span> - opens social account on a new tab<br /><br />`;
+                  help.innerHTML += `<span class="terminal-text-highlighted">blog</span> - shows my blog<br />`;
+                  help.innerHTML += `<span class="terminal-text-highlighted">contact</span> - shows my contact informations<br /><br />`;
 
                   help.innerHTML += `<span class="terminal-text-highlighted">ls</span> - lists all files and folders current directory<br /><br />`;
 
@@ -277,7 +286,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   document.getElementById("line-2").appendChild(about);
 
                   setTimeout(function () {
-                      window.location.href = `${value}.html`;
+                    window.location.href = `${value}.html`;
                   }, 3000);
                 } else if (
                   document.getElementById(`input-${counter}`).value ===
@@ -289,69 +298,17 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   document.getElementById("line-2").appendChild(quickFacts);
                   loadHtmlFile("../shared/elements/quick-facts.html");
                 } else if (
-                  document.getElementById(`input-${counter}`).value.split(" ")[0] ===
-                  "open"
-                ) {
-                  var socialString = document.getElementById(`input-${counter}`).value.split(" ")[1];
-
-                  
-                  if (socialString !== undefined) {
-                    socialString = socialString.toLowerCase();
-                  } 
-                  if (socialString === "email" || socialString === "e-mail" || socialString === "mail") {
-                    window.open(`mailto:contact@flo-dev.me`, '_blank').focus();
-                    document.getElementById("line-2").appendChild(document.createElement("br"));
-                  } else if (socialString === "linkedin") {
-                    window.open(`https://www.linkedin.com/in/florian-schmitz-de/`, '_blank').focus();
-                    document.getElementById("line-2").appendChild(document.createElement("br"));
-                  } else if (socialString === "github") {
-                    window.open(`https://github.com/floodoo`, '_blank').focus();
-                    document.getElementById("line-2").appendChild(document.createElement("br"));
-                  } else if (socialString === "medium") {
-                    window.open(`https://florian-schmitz.medium.com`, '_blank').focus();
-                    document.getElementById("line-2").appendChild(document.createElement("br"));
-                  } else if (socialString === "twitter") {
-                    window.open(`https://twitter.com/_florianschmitz`, '_blank').focus();
-                    document.getElementById("line-2").appendChild(document.createElement("br"));
-                  } else if (socialString === "instagram" || socialString === "insta") {
-                    window.open(`https://www.instagram.com/_florianschmitz/`, '_blank').focus();
-                    document.getElementById("line-2").appendChild(document.createElement("br"));
-                  }  else if (socialString === "tiktok") {
-                    window.open(`https://www.tiktok.com/@_florianschmitz`, '_blank').focus();
-                    document.getElementById("line-2").appendChild(document.createElement("br"));
-                  }  else if (socialString === "youtube") {
-                    window.open(`https://www.youtube.com/channel/UCFfKK-2ETMlfBVGVBP9sedA`, '_blank').focus();
-                    document.getElementById("line-2").appendChild(document.createElement("br"));
-                  }  else if (socialString === undefined) {
-                     const social = document.createElement("p");
-                    social.innerHTML = `<span style="color:red">Error: </span>You have to specify a social account.`;
-                    social.className = "terminal-text";
-                    document.getElementById("line-2").appendChild(social);
-                  } else {
-                    const social = document.createElement("p");
-                    social.innerHTML = `<span style="color:red">Error: </span>Unknown social account.`;
-                    social.className = "terminal-text";
-                    document.getElementById("line-2").appendChild(social);
-                  }
-
-                  
-                } else if (
                   document.getElementById(`input-${counter}`).value === "ls"
                 ) {
-                  const projects = document.createElement("table");
+                  const folder = document.createElement("table");
 
-                  projects.innerHTML = `<tr><td>home</td><td>about</td><td>projects</td></tr>`;
-                  projects.innerHTML += `<tr><td>blog</td><td>contact</td><td>resume</td></tr>`;
+                  folder.innerHTML = `<tr><td>home</td><td>about</td><td>projects</td></tr>`;
+                  folder.innerHTML += `<tr><td>blog</td><td>contact</td><td>resume</td></tr>`;
 
-                  projects.style.width = "100%";
-                  projects.style.color = "#60fdff";
-                  document.getElementById("line-2").appendChild(projects);
-
-                  var line2 = document.createElement("div");
-                  line2.id = "line-2";
-                  document.getElementById("line-1").appendChild(line2);
-                }
-                else if (
+                  folder.style.width = "100%";
+                  folder.style.color = "#60fdff";
+                  document.getElementById("line-2").appendChild(folder);
+                } else if (
                   document.getElementById(`input-${counter}`).value === "clear"
                 ) {
                   var element = document.getElementById("line-2");
@@ -359,15 +316,14 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
 
                   var line2 = document.createElement("div");
                   line2.id = "line-2";
-                  document.getElementById("typewriter-text").appendChild(line2);
+                  document.getElementById("line-1").appendChild(line2);
 
                   line2Padding = document.createElement("div");
                   line2Padding.style.paddingTop = "15px";
                   document.getElementById("line-2").appendChild(line2Padding);
 
                   deactivateInput = false;
-                }
-                else if (
+                } else if (
                   document.getElementById(`input-${counter}`).value === "exit"
                 ) {
                   window.location.href = "../../index.html";
@@ -411,8 +367,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
           }
           createElements();
         </script>
+      </div>
     </div>
-  </div>
-  </div>
-</body>
+  </body>
 </html>

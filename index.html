@@ -3,388 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Portfolio of Florian Schmitz</title>
+    <title>Portfolio Desktop of Florian Schmitz</title>
     <meta
       name="description"
-      content="This is the developer portfolio of Florian Schmitz. It contains information about his projects, his skills and his contact information. You can also find links to his social media accounts. Florian Schmitz is a frontend developer with more than 3 years of experience.."
-      />
-    <link rel="stylesheet" href="terminal/styles/styles.css" />
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="shared/scripts/loadAssets.js"></script>
-    <script type="text/javascript">
-      sessionStorage.setItem("counter", 0);
-    </script>
+      content="This is a website of Florian Schmitz portfolio, where he developed a desktop, with files and applications. You can open a terminal with more imformations about Florian Schmitz, his skills and projects. Also you can open applications like chrome, iterm and other developed applications."
+    />
+    <link rel="stylesheet" href="desktop/styles/styles.css" />
   </head>
-
   <body>
-    <!-- Navbar -->
-    <div class="terminal-window">
-      <a
-        class="terminal-window-close-button"
-        href="desktop/pages/desktop.html"
-      ></a>
-      <a
-        class="terminal-window-minimize-button"
-        href="desktop/pages/desktop.html"
-        style="background-color: #febc30"
-      ></a>
-      <div
-        class="terminal-window-button"
-        style="background-color: #2bc840"
-      ></div>
-      <div class="terminal-window-name">florianschmitz@MacBook-Pro:~</div>
-    </div>
-    <nav>
-      <a
-        id="home"
-        class="nav-button-active"
-        data-hotkey="Meta+1"
-        href="index.html"
-      >
-        <ul>
-          <li class="nav-button-text">~</li>
-          <li>⌘1</li>
-        </ul>
-      </a>
-      <a
-        id="about"
-        class="nav-button"
-        data-hotkey="Meta+2"
-        href="terminal/pages/about.html"
-      >
-        <ul>
-          <li class="nav-button-text">About</li>
-          <li>⌘2</li>
-        </ul>
-      </a>
-      <a
-        id="projects"
-        class="nav-button"
-        data-hotkey="Meta+3"
-        href="terminal/pages/projects.html"
-      >
-        <ul>
-          <li class="nav-button-text">Projects</li>
-          <li>⌘3</li>
-        </ul>
-      </a>
-      <a
-        id="blog"
-        class="nav-button"
-        data-hotkey="Meta+4"
-        href="terminal/pages/blog.html"
-      >
-        <ul>
-          <li class="nav-button-text">Blog</li>
-          <li>⌘4</li>
-        </ul>
-      </a>
-      <a
-        id="contact"
-        class="nav-button"
-        data-hotkey="Meta+5"
-        href="terminal/pages/contact.html"
-      >
-        <ul>
-          <li class="nav-button-text">Contact</li>
-          <li>⌘5</li>
-        </ul>
-      </a>
-      <span class="nav-add-button">+</span>
-      <a class="nav-menu-button" href="javascript:void(0);" onclick="openMenu()"
-        >&gt;&gt;</a
-      >
-    </nav>
-    <script>
-      function openMenu() {
-        var navMenu = document.getElementById("nav-menu");
-        if (navMenu.className === "nav-menu") {
-          navMenu.className += "-active";
-        } else {
-          navMenu.className = "nav-menu";
+    <div class="window">
+      <span>FloOS</span>
+      <span id="time"></span>
+      <script>
+        var days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        function updateTime() {
+          var day = new Date();
+          var dayName = days[day.getDay()];
+          document.getElementById("time").innerHTML =
+            dayName +
+            " " +
+            day.toLocaleString("en-US", {
+              hour12: true,
+              hour: "numeric",
+              minute: "numeric",
+              day: "numeric",
+              month: "numeric",
+            });
         }
-      }
 
-      window.addEventListener("mouseup", function (event) {
-        var nav = document.getElementById("nav-menu");
-
-        if (nav && event.target != nav && event.target.parentNode != nav) {
-          nav.className = "nav-menu";
-        }
-      });
-
-      function closeNavMenuOnScreenWidth(windowSize) {
-        var navMenu = document.getElementById("nav-menu");
-        if (navMenu && !windowSize.matches) {
-          navMenu.className = "nav-menu";
-        }
-      }
-
-      var windowSize = window.matchMedia("(max-width: 901px)");
-      closeNavMenuOnScreenWidth(windowSize);
-      windowSize.addListener(closeNavMenuOnScreenWidth);
-    </script>
-    <script>
-      document.addEventListener("keydown", (keyboardEvent) => {
-        [...document.querySelectorAll(`[data-hotkey]`)].forEach((elem) => {
-          const combineKey = elem.dataset.hotkey.split("+");
-
-          for (let myKeyStr of combineKey) {
-            myKeyStr = myKeyStr.toUpperCase();
-
-            if (myKeyStr.length > 1) {
-              if (
-                (myKeyStr === "META" && keyboardEvent.metaKey) ||
-                keyboardEvent.ctrlKey
-              ) {
-                continue;
-              }
-            }
-            if (keyboardEvent.key.toUpperCase() !== myKeyStr) {
-              return;
-            }
-          }
-          keyboardEvent.preventDefault();
-          elem.click();
-        });
-      });
-    </script>
-    <div class="nav-menu" id="nav-menu">
-      <a href="index.html" id="menu-home">Home</a>
-      <a href="terminal/pages/about.html" id="menu-about">About</a>
-      <a href="terminal/pages/projects.html" id="menu-projects">Projects</a>
-      <a href="terminal/pages/blog.html" id="menu-blog">Blog</a>
-      <a href="terminal/pages/contact.html" id="menu-contact">Contact</a>
-    </div>
-    <!-- End of navbar -->
-    <div style="padding-left: 15px">
-      <div data-include="terminal/shared/elements/last-login.html"></div>
-      <img
-        src="terminal/assets/images/terminal-symbol.svg"
-        alt="terminal new line symbol"
-        style="padding-right: 4px"
-      />
-      <span class="terminal-text-highlighted">~ </span>
-      <span id="typewriter"></span>
-      <span id="typewriter-text" style="display: none">
-        <span class="terminal-text-highlighted">cd </span>
-        <span class="terminal-text">development/portfolio</span>
-      </span>
-      <script type="text/javascript">
-        const typewriter = new Typewriter(
-          document.getElementById("typewriter"),
-          {
-            loop: false,
-            delay: 70,
-          }
-        );
-
-        typewriter
-          .typeString('<span class="terminal-text-highlighted">cd </span>')
-          .typeString(
-            '<span class="terminal-text">development/portfolio</span>'
-          )
-          .start();
-
-        setTimeout(function () {
-          document.getElementById("line-1").style.display = "block";
-          document.getElementById("typewriter").style = "display: none";
-          document.getElementById("typewriter-text").style = "display: inline";
-
-          const typewriter2 = new Typewriter(
-            document.getElementById("typewriter-2"),
-            {
-              loop: false,
-              delay: 70,
-            }
-          );
-
-          typewriter2
-            .typeString('<span class="terminal-text-highlighted">make </span>')
-            .typeString('<span class="terminal-text">portfolio</span>')
-            .start();
-        }, 3000);
-
-        setTimeout(function () {
-          document.getElementById("line-2").style.display = "block";
-          document.getElementById("typewriter-2").style = "display: none";
-          document.getElementById("typewriter-text-2").style =
-            "display: inline";
-          document.getElementById("input-0").focus();
-        }, 5000);
+        updateTime();
+        setInterval(updateTime, 1000);
       </script>
-
-      <div id="line-1" style="display: none">
-        <img
-          src="terminal/assets/images/terminal-symbol.svg"
-          alt="terminal new line symbol"
-          style="padding-right: 4px; padding-top: 15px"
-        />
-        <span class="terminal-text-highlighted">portfolio [</span>
-        <span style="color: #60fdff">main</span>
-        <span class="terminal-text-highlighted">]</span>
-        <span>⚡️</span>
-        <span id="typewriter-2"></span>
-        <span id="typewriter-text-2" style="display: none">
-          <span class="terminal-text-highlighted">make </span>
-          <span class="terminal-text">portfolio</span>
-        </span>
-      </div>
-      <div id="line-2" style="display: none">
-        <div style="padding-top: 6px">
-          <span class="terminal-text-highlighted">portfolio </span>
-          <span>⚡️</span>
-          <input
-            class="input-0"
-            id="input-0"
-            autocomplete="off"
-            placeholder="help"
-          />
-        </div>
-        <script>
-          async function createElements() {
-            var counter = sessionStorage.getItem("counter");
-            counter = parseInt(counter);
-            var inputWithCounter = `input-${counter + 1}`;
-            var deactivateInput = true;
-
-            document
-              .getElementById(`input-${counter}`)
-              .addEventListener("keydown", (e) => {
-                if (e.key !== "Enter") {
-                  return;
-                }
-
-                if (document.getElementById(`input-${counter}`).value === "") {
-                  document
-                    .getElementById("line-2")
-                    .appendChild(document.createElement("div"));
-                } else if (
-                  document.getElementById(`input-${counter}`).value === "help"
-                ) {
-                  const help = document.createElement("div");
-                  help.innerHTML = `<span class="terminal-text-highlighted">help</span> - shows this help message<br /><br />`;
-
-                  help.innerHTML += `<span class="terminal-text-highlighted">home</span> - shows home tab<br /><br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">about</span> - shows information about me<br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">--quick-facts</span> - shows quick facts about me<br /><br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">projects</span> - shows my projects<br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">blog</span> - shows my blog<br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">contact</span> - shows my contact informations<br /><br />`;
-
-                  help.innerHTML += `<span class="terminal-text-highlighted">ls</span> - lists all files and folders current directory<br /><br />`;
-
-                  help.innerHTML += `<span class="terminal-text-highlighted">clear</span> - clears terminal<br />`;
-                  help.innerHTML += `<span class="terminal-text-highlighted">exit</span> - close terminal`;
-                  help.className = "terminal-text";
-                  document.getElementById("line-2").appendChild(help);
-                  makeBr = false;
-                } else if (
-                  document.getElementById(`input-${counter}`).value ===
-                    "home" ||
-                  document.getElementById(`input-${counter}`).value ===
-                    "about" ||
-                  document.getElementById(`input-${counter}`).value ===
-                    "projects" ||
-                  document.getElementById(`input-${counter}`).value ===
-                    "blog" ||
-                  document.getElementById(`input-${counter}`).value ===
-                    "contact"
-                ) {
-                  var value = document.getElementById(`input-${counter}`).value;
-                  const about = document.createElement("div");
-                  about.innerHTML = `<span style="color:orange">Warning: </span>An instance of ${value} is already running. You will be redirected...`;
-                  about.className = "terminal-text";
-                  document.getElementById("line-2").appendChild(about);
-
-                  setTimeout(function () {
-                    if (value === "home") {
-                      window.location.href = `index.html`;
-                    } else {
-                      window.location.href = `terminal/pages/${value}.html`;
-                    }
-                  }, 3000);
-                } else if (
-                  document.getElementById(`input-${counter}`).value ===
-                  "about --quick-facts"
-                ) {
-                  const quickFacts = document.createElement("div");
-                  quickFacts.innerHTML = `<div data-include="terminal/shared/elements/quick-facts.html"></div>`;
-                  quickFacts.className = "terminal-text";
-                  document.getElementById("line-2").appendChild(quickFacts);
-                  loadHtmlFile("terminal/shared/elements/quick-facts.html");
-                } else if (
-                  document.getElementById(`input-${counter}`).value === "ls"
-                ) {
-                  const folder = document.createElement("table");
-
-                  folder.innerHTML = `<tr><td>home</td><td>about</td><td>projects</td></tr>`;
-                  folder.innerHTML += `<tr><td>blog</td><td>contact</td><td>resume</td></tr>`;
-
-                  folder.style.width = "100%";
-                  folder.style.color = "#60fdff";
-                  document.getElementById("line-2").appendChild(folder);
-                } else if (
-                  document.getElementById(`input-${counter}`).value === "clear"
-                ) {
-                  var element = document.getElementById("line-2");
-                  element.parentNode.removeChild(element);
-
-                  var line2 = document.createElement("div");
-                  line2.id = "line-2";
-                  document.getElementById("line-1").appendChild(line2);
-
-                  line2Padding = document.createElement("div");
-                  line2Padding.style.paddingTop = "15px";
-                  document.getElementById("line-2").appendChild(line2Padding);
-
-                  deactivateInput = false;
-                } else if (
-                  document.getElementById(`input-${counter}`).value === "exit"
-                ) {
-                  window.location.href = "/desktop/pages/desktop.html";
-                  return;
-                } else {
-                  const notFound = document.createElement("div");
-                  notFound.innerHTML = `<span class="terminal-text-highlighted">${
-                    document.getElementById(`input-${counter}`).value
-                  }</span> - command not found`;
-                  notFound.className = "terminal-text";
-                  document.getElementById("line-2").appendChild(notFound);
-                }
-
-                if (deactivateInput) {
-                  const input = (document.getElementById(
-                    `input-${counter}`
-                  ).disabled = true);
-                }
-
-                const nextLine2 = document.createElement("span");
-                nextLine2.className = "terminal-text-highlighted";
-                nextLine2.innerHTML = "portfolio ";
-                document.getElementById("line-2").appendChild(nextLine2);
-
-                const nextLine3 = document.createElement("span");
-                nextLine3.innerHTML = "⚡️";
-                document.getElementById("line-2").appendChild(nextLine3);
-
-                const nextLine4 = document.createElement("input");
-                nextLine4.className = inputWithCounter;
-                nextLine4.id = inputWithCounter;
-                nextLine4.autoComplete = "off";
-                document.getElementById("line-2").appendChild(nextLine4);
-                document.getElementById(inputWithCounter).focus();
-
-                counter++;
-                sessionStorage.setItem("counter", counter);
-
-                createElements();
-              });
-          }
-          createElements();
-        </script>
-      </div>
+    </div>
+    <div class="file">
+      <a class="file-link" href="terminal/pages/hacked.html">
+        <img class="file-image" src="desktop/assets/files/virus_file.png" />
+        <div>cat.png</div>
+      </a>
+    </div>
+    <div class="bottom-nav-bar">
+      <a>Overview</a>
+      <a>VS-Code</a>
+      <a href="flome/pages/flome-new-tab.html">Flome</a>
+      <a href="terminal/pages/home.html">iTerm2</a>
+      <a>Sourcetree</a>
+      <a>Slack</a>
+      <a>Spotify</a>
     </div>
   </body>
 </html>

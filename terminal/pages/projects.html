@@ -19,11 +19,11 @@
     <div class="terminal-window">
       <a
         class="terminal-window-close-button"
-        href="../../desktop/pages/desktop.html"
+        href="../../index.html"
       ></a>
       <a
         class="terminal-window-minimize-button"
-        href="../../desktop/pages/desktop.html"
+        href="../../index.html"
         style="background-color: #febc30"
       ></a>
       <div
@@ -37,7 +37,7 @@
         id="home"
         class="nav-button"
         data-hotkey="Meta+1"
-        href="../../index.html"
+        href="home.html"
       >
         <ul>
           <li class="nav-button-text">~</li>
@@ -146,7 +146,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
       });
     </script>
    <div class="nav-menu" id="nav-menu">
-      <a href="../../index.html" id="menu-home">Home</a>
+      <a href="home.html" id="menu-home">Home</a>
       <a href="about.html" id="menu-about">About</a>
       <a href="projects.html" id="menu-projects">Projects</a>
       <a href="blog.html" id="menu-blog">Blog</a>
@@ -251,11 +251,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                   document.getElementById("line-2").appendChild(about);
 
                   setTimeout(function () {
-                    if (value === "home") {
-                      window.location.href = `../../index.html`;
-                    } else {
                       window.location.href = `${value}.html`;
-                    }
                   }, 3000);
                 }  else if (
                   document.getElementById(`input-${counter}`).value ===
@@ -332,7 +328,7 @@ windowSize.addListener(closeNavMenuOnScreenWidth)
                 else if (
                   document.getElementById(`input-${counter}`).value === "exit"
                 ) {
-                  window.location.href = "../../desktop/pages/desktop.html";
+                  window.location.href = "../../index.html";
                   return;
                 } else {
                   const notFound = document.createElement("div");
