@@ -9,42 +9,47 @@
 
 <url>
   <loc>https://flo-dev.me/</loc>
-  <lastmod>2022-09-19T17:50:22+00:00</lastmod>
+  <lastmod>2022-10-13T06:36:06+00:00</lastmod>
   <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://flo-dev.me/desktop/pages/desktop.html</loc>
-  <lastmod>2022-09-19T17:50:22+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://flo-dev.me/index.html</loc>
-  <lastmod>2022-09-19T17:50:22+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://flo-dev.me/terminal/pages/about.html</loc>
-  <lastmod>2022-09-19T17:50:22+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://flo-dev.me/terminal/pages/projects.html</loc>
-  <lastmod>2022-09-19T17:50:22+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://flo-dev.me/terminal/pages/blog.html</loc>
-  <lastmod>2022-09-19T17:50:22+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://flo-dev.me/terminal/pages/contact.html</loc>
-  <lastmod>2022-09-19T17:50:22+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://flo-dev.me/terminal/pages/hacked.html</loc>
   <lastmod>2022-09-19T17:50:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://flo-dev.me/flome/pages/flome-new-tab.html</loc>
+  <lastmod>2022-10-13T06:36:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://flo-dev.me/terminal/pages/home.html</loc>
+  <lastmod>2022-10-13T06:36:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://flo-dev.me/index.html</loc>
+  <lastmod>2022-10-13T06:36:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://flo-dev.me/terminal/pages/about.html</loc>
+  <lastmod>2022-10-13T06:36:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://flo-dev.me/terminal/pages/projects.html</loc>
+  <lastmod>2022-10-13T06:36:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://flo-dev.me/terminal/pages/blog.html</loc>
+  <lastmod>2022-10-13T06:36:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://flo-dev.me/terminal/pages/contact.html</loc>
+  <lastmod>2022-10-13T06:36:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
