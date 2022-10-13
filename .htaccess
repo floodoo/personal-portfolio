@@ -1,0 +1,5 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^flo-dev.me [NC]
+RewriteRule ^(.*)$ http://www.flo-dev.me/$1 [R=301,NC]
+RewriteRule ^index.html$ http://flo-dev.me/ [R=301,L]
